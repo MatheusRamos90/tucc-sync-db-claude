@@ -1,0 +1,173 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36" pages="2">
+  <diagram name="microsservicos" id="cMbAM3zRrA8lUleZmBVC">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JThhJWw9X_SpuzGtfINS-2" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;TUCC (Tests Under Claude Code)&lt;/h1&gt;&lt;p&gt;Projetos que fazem parte da sincronização de dados do Oracle (legado) para Postgres. Utilização de regras e habilidades (roles &amp;amp; skills) do Claude Code.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="840" x="40" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-14" edge="1" parent="1" source="KBxd40oUGaLzeB0K-hSW-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KBxd40oUGaLzeB0K-hSW-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Client&lt;br&gt;(Web, Mobile)" vertex="1">
+          <mxGeometry height="160" width="90" x="40" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="tucc-sync-db-producer" vertex="1">
+          <mxGeometry height="60" width="160" x="460" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-13" edge="1" parent="1" source="KBxd40oUGaLzeB0K-hSW-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KBxd40oUGaLzeB0K-hSW-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="tucc-sync-db-consumer" vertex="1">
+          <mxGeometry height="60" width="160" x="460" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-7" edge="1" parent="1" source="KBxd40oUGaLzeB0K-hSW-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KBxd40oUGaLzeB0K-hSW-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="Oracle" vertex="1">
+          <mxGeometry height="80" width="60" x="700" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="tucc-core" vertex="1">
+          <mxGeometry height="60" width="160" x="220" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-6" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="Postgres" vertex="1">
+          <mxGeometry height="80" width="60" x="510" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-9" edge="1" parent="1" source="KBxd40oUGaLzeB0K-hSW-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="KBxd40oUGaLzeB0K-hSW-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-11" parent="1" style="shape=card;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="Kafka (topic)" vertex="1">
+          <mxGeometry height="100" width="80" x="500" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-12" edge="1" parent="1" source="KBxd40oUGaLzeB0K-hSW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="KBxd40oUGaLzeB0K-hSW-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-15" edge="1" parent="1" source="KBxd40oUGaLzeB0K-hSW-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=52.5;entryPerimeter=0;" target="KBxd40oUGaLzeB0K-hSW-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="230" />
+              <mxPoint x="410" y="643" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-17" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;## Tópicos (Kafka)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- tucc-sync-event&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;- tucc-sync-event.dlq&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font size=&quot;3&quot;&gt;- tucc-sync-event.retry&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="170" width="340" x="487" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-40" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;# Sobre os projetos&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 18px; text-align: center;&quot;&gt;## tucc-sync-db-producer&lt;/b&gt;&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- Projeto que escuta as modificações do banco de dados Oracle (legado) através do Debezium, ele usa o conector do Kafka, mapeia os dados e publica uma mensagem em um tópico. A mensagem contém dados referente a uma tabela específica do Oracle, isso servirá de orientação no consumir para a sincronização dos dados.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;## tucc-sync-db-consumer&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- Projeto que consome as mensagens do tópico do Kafka para inserir os dados no banco de dados Postgres, realizando um mapeamento dos dados, identificando qual tabela teve a modificação e qual foi o tipo da alteração (UPDATE, DELETE), por fim realizando a sincronização dos dados.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;## tucc-core&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- Projeto que disponibiliza endpoints para consumo dos gateways ou clients, aqui tem conexão com o Postgres para listar itens do banco de dados Postgres. Não há alterações de dados nesse banco, apenas leitura, já que os dados são inseridos no Oracle através de um legado.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;##&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-size: 18px;&quot;&gt;&lt;b&gt;tucc-monolito&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- Projeto legado desenvolvido em Java 8, JSP, Struts, Javascript, Ajax e Oracle. Através dele é alimentada a base de dados que será útil para a sincronização, ou migração, dos dados para o Postgres na arquitetura de microsserviços.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="440" width="1110" x="40" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="KBxd40oUGaLzeB0K-hSW-41" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;## Tecnologias (microsserviços)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Java 21&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Spring Boot&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Spring JPA&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Apache Kafka&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Postgres&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Oracle&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Debezium&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="310" width="410" x="40" y="1720" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-2" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="PRODUTO" vertex="1">
+          <mxGeometry height="160" width="220" x="900" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-3" parent="uC_cmnYjKfoOW7ZqqsWt-2" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="- ID: NUMERIC(10)&lt;br&gt;- NOME: VARCHAR2&lt;div&gt;- VALOR: NUMERIC(2, 10)&lt;/div&gt;&lt;div&gt;- DESCONTO: NUMERIC(2, 10)&lt;br&gt;- DT_CRIACAO: TIMESTAMP&lt;div&gt;- DT_ATUALIZACAO&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: TIMESTAMP&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-4" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="PRODUTO_EMPRESA" vertex="1">
+          <mxGeometry height="120" width="220" x="1220" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-5" parent="uC_cmnYjKfoOW7ZqqsWt-4" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="- ID: NUMERIC(10)&lt;br&gt;- PRODUTO_ID: NUMERIC(10)&lt;div&gt;- EMPRESA_ID&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;NUMERIC(10)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-6" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="EMPRESA" vertex="1">
+          <mxGeometry height="140" width="220" x="900" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-7" parent="uC_cmnYjKfoOW7ZqqsWt-6" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="- ID: NUMERIC(10)&lt;br&gt;- NOME: VARCHAR2&lt;div&gt;- CNPJ: VARCHAR2&lt;br&gt;&lt;div&gt;- DT_CRIACAO: TIMESTAMP&lt;div&gt;- DT_ATUALIZACAO&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: TIMESTAMP&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-8" edge="1" parent="1" source="uC_cmnYjKfoOW7ZqqsWt-3" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="uC_cmnYjKfoOW7ZqqsWt-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-9" edge="1" parent="1" source="uC_cmnYjKfoOW7ZqqsWt-7" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="uC_cmnYjKfoOW7ZqqsWt-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uC_cmnYjKfoOW7ZqqsWt-10" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Entidades (Oracle)&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Aqui estão algumas tabelas utilizadas no banco de dados Oracle que deverão ser escutadas para sincronização dos dados para o Postgres. São elas:&lt;/span&gt;&lt;br&gt;&lt;br&gt;## PRODUTO&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;- ID: NUMERIC(10)&lt;br&gt;- NOME: VARCHAR2&lt;div&gt;- VALOR: NUMERIC(2, 10)&lt;/div&gt;&lt;div&gt;- DESCONTO: NUMERIC(2, 10)&lt;br&gt;- DT_CRIACAO: TIMESTAMP&lt;div&gt;- DT_ATUALIZACAO&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: TIMESTAMP&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;## EMPRESA&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;- ID: NUMERIC(10)&lt;/div&gt;&lt;div&gt;- NOME: VARCHAR2&lt;/div&gt;&lt;div&gt;- CNPJ: VARCHAR2&lt;/div&gt;&lt;div&gt;- DT_CRIACAO: TIMESTAMP&lt;/div&gt;&lt;div&gt;- DT_ATUALIZACAO: TIMESTAMP&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 18px;&quot;&gt;&lt;b&gt;## &lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;PRODUTO_EMPRESA&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;div&gt;- ID: NUMERIC(10)&lt;/div&gt;&lt;div&gt;- PRODUTO_ID: NUMERIC(10)&lt;/div&gt;&lt;div&gt;- EMPRESA_ID: NUMERIC(10)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="520" width="1110" x="40" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="71SpOG4iUXgxFDnSNCa7-2" edge="1" parent="1" source="71SpOG4iUXgxFDnSNCa7-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KBxd40oUGaLzeB0K-hSW-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="71SpOG4iUXgxFDnSNCa7-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="tucc-monolito" vertex="1">
+          <mxGeometry height="60" width="160" x="650" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="71SpOG4iUXgxFDnSNCa7-3" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;## Tecnologias (monolito - legado)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Java 8&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- JSP&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Struts&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Javascript&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- jQuery&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Ajax&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Oracle&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="310" width="410" x="40" y="2028" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mzDaklbOv4U5AK7Yeh2c" name="monolito-legado">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0x76R--6hEuoyzaGAdGl-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;tucc-monolito&lt;/b&gt;&lt;/h1&gt;&lt;p&gt;Projeto legado desenvolvido em Java 8, JSP, Struts, Javascript, Ajax e Oracle. Aqui simula um projeto monolito muito utilizado em algumas empresas ainda nos tempos de hoje. A regra de negócio e as renderizações de telas acontecem no lado do servidor.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="840" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-2" edge="1" parent="1" source="0x76R--6hEuoyzaGAdGl-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0x76R--6hEuoyzaGAdGl-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="JSP&lt;br&gt;(Javascript, jQuery, Ajax)" vertex="1">
+          <mxGeometry height="90" width="90" x="40" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-8" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="Oracle" vertex="1">
+          <mxGeometry height="80" width="60" x="730" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="5FMv2-AaYWNzOzgoOPXP-2" edge="1" parent="1" source="0x76R--6hEuoyzaGAdGl-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="5FMv2-AaYWNzOzgoOPXP-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5FMv2-AaYWNzOzgoOPXP-5" edge="1" parent="1" source="0x76R--6hEuoyzaGAdGl-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="5FMv2-AaYWNzOzgoOPXP-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Servlet&lt;br&gt;(HttpRequestServlet, HttpResponseServlet)" vertex="1">
+          <mxGeometry height="60" width="160" x="220" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-18" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="PRODUTO" vertex="1">
+          <mxGeometry height="160" width="220" x="900" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-19" parent="0x76R--6hEuoyzaGAdGl-18" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="- ID: NUMERIC(10)&lt;br&gt;- NOME: VARCHAR2&lt;div&gt;- VALOR: NUMERIC(2, 10)&lt;/div&gt;&lt;div&gt;- DESCONTO: NUMERIC(2, 10)&lt;br&gt;- DT_CRIACAO: TIMESTAMP&lt;div&gt;- DT_ATUALIZACAO&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: TIMESTAMP&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-20" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="PRODUTO_EMPRESA" vertex="1">
+          <mxGeometry height="120" width="220" x="1220" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-21" parent="0x76R--6hEuoyzaGAdGl-20" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="- ID: NUMERIC(10)&lt;br&gt;- PRODUTO_ID: NUMERIC(10)&lt;div&gt;- EMPRESA_ID&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;NUMERIC(10)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-22" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="EMPRESA" vertex="1">
+          <mxGeometry height="140" width="220" x="900" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-23" parent="0x76R--6hEuoyzaGAdGl-22" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="- ID: NUMERIC(10)&lt;br&gt;- NOME: VARCHAR2&lt;div&gt;- CNPJ: VARCHAR2&lt;br&gt;&lt;div&gt;- DT_CRIACAO: TIMESTAMP&lt;div&gt;- DT_ATUALIZACAO&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: TIMESTAMP&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-24" edge="1" parent="1" source="0x76R--6hEuoyzaGAdGl-19" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="0x76R--6hEuoyzaGAdGl-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-25" edge="1" parent="1" source="0x76R--6hEuoyzaGAdGl-23" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="0x76R--6hEuoyzaGAdGl-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-26" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Entidades (Oracle)&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Aqui estão algumas tabelas utilizadas no banco de dados Oracle. São elas:&lt;/span&gt;&lt;br&gt;&lt;br&gt;## PRODUTO&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;- ID: NUMERIC(10)&lt;br&gt;- NOME: VARCHAR2&lt;div&gt;- VALOR: NUMERIC(2, 10)&lt;/div&gt;&lt;div&gt;- DESCONTO: NUMERIC(2, 10)&lt;br&gt;- DT_CRIACAO: TIMESTAMP&lt;div&gt;- DT_ATUALIZACAO&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: TIMESTAMP&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;## EMPRESA&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;- ID: NUMERIC(10)&lt;/div&gt;&lt;div&gt;- NOME: VARCHAR2&lt;/div&gt;&lt;div&gt;- CNPJ: VARCHAR2&lt;/div&gt;&lt;div&gt;- DT_CRIACAO: TIMESTAMP&lt;/div&gt;&lt;div&gt;- DT_ATUALIZACAO: TIMESTAMP&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 18px;&quot;&gt;&lt;b&gt;## &lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;PRODUTO_EMPRESA&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;div&gt;- ID: NUMERIC(10)&lt;/div&gt;&lt;div&gt;- PRODUTO_ID: NUMERIC(10)&lt;/div&gt;&lt;div&gt;- EMPRESA_ID: NUMERIC(10)&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="520" width="1110" x="40" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="0x76R--6hEuoyzaGAdGl-29" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;## Tecnologias (monolito - legado)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Java 8&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- JSP&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Struts&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Javascript&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- jQuery&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;- Ajax&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;- Oracle&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="310" width="410" x="40" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="5FMv2-AaYWNzOzgoOPXP-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="ConverterToDTO: ObjetoDTO" vertex="1">
+          <mxGeometry height="60" width="210" x="460" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="5FMv2-AaYWNzOzgoOPXP-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="DAO&lt;br&gt;(ObjetoDTO)" vertex="1">
+          <mxGeometry height="60" width="160" x="470" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="5FMv2-AaYWNzOzgoOPXP-6" edge="1" parent="1" source="5FMv2-AaYWNzOzgoOPXP-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="0x76R--6hEuoyzaGAdGl-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKj-n_WhGmlD4-_hfJjg-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;# Sobre os projetos&lt;/h1&gt;&lt;p&gt;A camada de apresentação (frontend) utiliza estrutura simples com HTML e CSS, utilizando Bootstrap, e as requisições feitas aos servlets são feitas através do Ajax, o qual envia pelo corpo de requisição os dados para persistência no banco de dados Oracle. Existem algumas camadas nessa arquitetura, utilizadas antes da chegada dos microsserviços. Na camada DAO, os dados são persistidos no banco via queries nativas utilizando PreparedStatement, ResultSet entre outros. As transações de banco são iniciadas antes do processo, comitadas após tudo quando não há falhas, mas havendo falhas é dado rollback.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="850" x="40" y="580" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

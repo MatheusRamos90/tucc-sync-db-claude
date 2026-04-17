@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: tucc-sync-db-consumer
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:tucc}
+    username: ${POSTGRES_USER:tucc}
+    password: ${POSTGRES_PASSWORD:tucc}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: ${kafka.consumer.group-id}
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "br.com.matheushramos.tucc_sync_db_consumer.payload"
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: br.com.matheushramos.tucc_sync_db_consumer.payload.SyncEventPayload
+    listener:
+      ack-mode: MANUAL_IMMEDIATE
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+kafka:
+  topics:
+    sync-event: tucc-sync-event
+    dlq: tucc-sync-event.dlq
+    retry: tucc-sync-event.retry
+  consumer:
+    group-id: tucc-sync-consumer-group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

@@ -1,0 +1,11 @@
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/Main.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/action/EmpresaAction.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/action/ProdutoAction.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/action/ProdutoEmpresaAction.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/dao/ConnectionFactory.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/dao/EmpresaDAO.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/dao/ProdutoDAO.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/dao/ProdutoEmpresaDAO.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/model/Empresa.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/model/Produto.java
+/home/msilva/projetos/projetos_java/tucc-sync-db-claude/tucc-monolito/src/main/java/br/com/matheushramos/tucc_monolito/model/ProdutoEmpresa.java

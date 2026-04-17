@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8090/empresa/salvar.action -d 'empresa.nome=Tech+Solutions+LTDA&empresa.cnpj=12.345.678%2F0001-99')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8090/produto/salvar.action -d 'produto.nome=Notebook+Pro+X1&produto.valor=4500.00&produto.desconto=200.00')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8090/produto/salvar.action -d 'produto.nome=Mouse+Wireless&produto.valor=150.00&produto.desconto=0.00')",
+      "Bash(unzip -p /tmp/producer-app-new.jar \"BOOT-INF/lib/connect-api-4.1.2.jar\")",
+      "Bash(javap -classpath /tmp/connect-api.jar org.apache.kafka.connect.source.SourceTask)",
+      "Bash(./mvnw dependency:tree -Dincludes=\"org.apache.kafka:connect-api\")",
+      "Bash(./mvnw dependency:tree -Dverbose -Dincludes=\"org.apache.kafka:connect-api\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8090/empresa/salvar.action -d 'empresa.nome=Startup+Inovacao+SA&empresa.cnpj=98.765.432%2F0001-11')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8090/produto/salvar.action -d 'produto.nome=Teclado+Mecanico+RGB&produto.valor=350.00&produto.desconto=25.00')",
+      "Bash(grep -v \"^$\")",
+      "Bash(unzip -p /tmp/consumer-app-new.jar \"BOOT-INF/lib/spring-boot-jackson-4.0.5.jar\")",
+      "Bash(unzip -p /tmp/spring-boot-jackson.jar \"META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports\")",
+      "Read(//tmp/**)",
+      "Bash(unzip -p /tmp/consumer-app-new.jar \"BOOT-INF/lib/spring-boot-jackson-4.0.5.jar\" unzip -p /tmp/spring-boot-jackson-new.jar \"META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports\" echo \"---\")",
+      "Bash(unzip -l /tmp/spring-boot-jackson-new.jar)",
+      "Bash(unzip -p /tmp/spring-boot-jackson-new.jar \"META-INF/spring-autoconfigure-metadata.properties\")"
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "info": {
+    "name": "tucc-core",
+    "description": "API de consulta dos dados sincronizados do Oracle para o PostgreSQL via Debezium + Kafka.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "page",
+      "value": "0",
+      "type": "string"
+    },
+    {
+      "key": "size",
+      "value": "20",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Produtos",
+      "description": "Consulta de produtos sincronizados do Oracle.",
+      "item": [
+        {
+          "name": "Listar produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos?page={{page}}&size={{size}}&sort=id,asc",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{page}}",
+                  "description": "Número da página (base 0)"
+                },
+                {
+                  "key": "size",
+                  "value": "{{size}}",
+                  "description": "Quantidade de itens por página (padrão: 20)"
+                },
+                {
+                  "key": "sort",
+                  "value": "id,asc",
+                  "description": "Campo e direção de ordenação"
+                }
+              ]
+            },
+            "description": "Retorna uma página de produtos. Suporta paginação e ordenação via parâmetros `page`, `size` e `sort`."
+          },
+          "response": [
+            {
+              "name": "200 OK — página de produtos",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": 1,\n      \"nome\": \"Produto A\",\n      \"valor\": 99.99,\n      \"desconto\": 5.00,\n      \"createdAt\": \"2024-01-15T10:30:00Z\",\n      \"updatedAt\": \"2024-03-20T14:45:00Z\"\n    },\n    {\n      \"id\": 2,\n      \"nome\": \"Produto B\",\n      \"valor\": 49.90,\n      \"desconto\": null,\n      \"createdAt\": \"2024-02-01T08:00:00Z\",\n      \"updatedAt\": null\n    }\n  ],\n  \"pageable\": {\n    \"pageNumber\": 0,\n    \"pageSize\": 20,\n    \"sort\": { \"sorted\": true, \"unsorted\": false, \"empty\": false }\n  },\n  \"totalElements\": 2,\n  \"totalPages\": 1,\n  \"last\": true,\n  \"first\": true,\n  \"numberOfElements\": 2,\n  \"empty\": false\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar produto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos", "1"]
+            },
+            "description": "Retorna um produto pelo ID. Retorna 404 se não encontrado."
+          },
+          "response": [
+            {
+              "name": "200 OK — produto encontrado",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 1,\n  \"nome\": \"Produto A\",\n  \"valor\": 99.99,\n  \"desconto\": 5.00,\n  \"createdAt\": \"2024-01-15T10:30:00Z\",\n  \"updatedAt\": \"2024-03-20T14:45:00Z\"\n}"
+            },
+            {
+              "name": "404 Not Found — produto não encontrado",
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"error\": \"Not Found\",\n  \"message\": \"Produto não encontrado: 999\",\n  \"path\": \"/produtos/999\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Empresas",
+      "description": "Consulta de empresas sincronizadas do Oracle.",
+      "item": [
+        {
+          "name": "Listar empresas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/empresas?page={{page}}&size={{size}}&sort=id,asc",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{page}}",
+                  "description": "Número da página (base 0)"
+                },
+                {
+                  "key": "size",
+                  "value": "{{size}}",
+                  "description": "Quantidade de itens por página (padrão: 20)"
+                },
+                {
+                  "key": "sort",
+                  "value": "id,asc",
+                  "description": "Campo e direção de ordenação"
+                }
+              ]
+            },
+            "description": "Retorna uma página de empresas. Suporta paginação e ordenação via parâmetros `page`, `size` e `sort`."
+          },
+          "response": [
+            {
+              "name": "200 OK — página de empresas",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": 10,\n      \"nome\": \"Empresa X\",\n      \"cnpj\": \"12345678000199\",\n      \"createdAt\": \"2023-06-01T09:00:00Z\",\n      \"updatedAt\": \"2024-01-10T11:20:00Z\"\n    }\n  ],\n  \"pageable\": {\n    \"pageNumber\": 0,\n    \"pageSize\": 20,\n    \"sort\": { \"sorted\": true, \"unsorted\": false, \"empty\": false }\n  },\n  \"totalElements\": 1,\n  \"totalPages\": 1,\n  \"last\": true,\n  \"first\": true,\n  \"numberOfElements\": 1,\n  \"empty\": false\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar empresa por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/empresas/10",
+              "host": ["{{baseUrl}}"],
+              "path": ["empresas", "10"]
+            },
+            "description": "Retorna uma empresa pelo ID. Retorna 404 se não encontrada."
+          },
+          "response": [
+            {
+              "name": "200 OK — empresa encontrada",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 10,\n  \"nome\": \"Empresa X\",\n  \"cnpj\": \"12345678000199\",\n  \"createdAt\": \"2023-06-01T09:00:00Z\",\n  \"updatedAt\": \"2024-01-10T11:20:00Z\"\n}"
+            },
+            {
+              "name": "404 Not Found — empresa não encontrada",
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"error\": \"Not Found\",\n  \"message\": \"Empresa não encontrada: 999\",\n  \"path\": \"/empresas/999\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Produtos-Empresas",
+      "description": "Consulta de associações produto-empresa sincronizadas do Oracle.",
+      "item": [
+        {
+          "name": "Listar associações produto-empresa",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos-empresas?page={{page}}&size={{size}}&sort=id,asc",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos-empresas"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{page}}",
+                  "description": "Número da página (base 0)"
+                },
+                {
+                  "key": "size",
+                  "value": "{{size}}",
+                  "description": "Quantidade de itens por página (padrão: 20)"
+                },
+                {
+                  "key": "sort",
+                  "value": "id,asc",
+                  "description": "Campo e direção de ordenação"
+                }
+              ]
+            },
+            "description": "Retorna uma página de associações produto-empresa. Inclui nome do produto e da empresa via navegação LAZY. Suporta paginação e ordenação."
+          },
+          "response": [
+            {
+              "name": "200 OK — página de associações",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": 100,\n      \"produtoId\": 1,\n      \"produtoNome\": \"Produto A\",\n      \"empresaId\": 10,\n      \"empresaNome\": \"Empresa X\"\n    }\n  ],\n  \"pageable\": {\n    \"pageNumber\": 0,\n    \"pageSize\": 20,\n    \"sort\": { \"sorted\": true, \"unsorted\": false, \"empty\": false }\n  },\n  \"totalElements\": 1,\n  \"totalPages\": 1,\n  \"last\": true,\n  \"first\": true,\n  \"numberOfElements\": 1,\n  \"empty\": false\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar associação produto-empresa por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos-empresas/100",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos-empresas", "100"]
+            },
+            "description": "Retorna uma associação produto-empresa pelo ID. Inclui nome do produto e da empresa. Retorna 404 se não encontrada."
+          },
+          "response": [
+            {
+              "name": "200 OK — associação encontrada",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"id\": 100,\n  \"produtoId\": 1,\n  \"produtoNome\": \"Produto A\",\n  \"empresaId\": 10,\n  \"empresaNome\": \"Empresa X\"\n}"
+            },
+            {
+              "name": "404 Not Found — associação não encontrada",
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"error\": \"Not Found\",\n  \"message\": \"ProdutoEmpresa não encontrado: 999\",\n  \"path\": \"/produtos-empresas/999\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.kafka.autoconfigure.KafkaAutoConfiguration
+  kafka:
+    bootstrap-servers: localhost:9092
+
+debezium:
+  enabled: false
+
+kafka:
+  topics:
+    sync-event: tucc-sync-event
+    dlq: tucc-sync-event.dlq
+    retry: tucc-sync-event.retry

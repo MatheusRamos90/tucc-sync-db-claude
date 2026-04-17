@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: tucc-sync-db-producer
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      retries: 3
+      properties:
+        spring.json.add.type.headers: false
+
+kafka:
+  topics:
+    sync-event: tucc-sync-event
+    dlq: tucc-sync-event.dlq
+    retry: tucc-sync-event.retry
+
+debezium:
+  enabled: true
+  connector-name: tucc-oracle-connector
+  database:
+    hostname: ${ORACLE_HOST:localhost}
+    port: ${ORACLE_PORT:1521}
+    user: ${ORACLE_USER:system}
+    password: ${ORACLE_PASSWORD:oracle}
+    dbname: ${ORACLE_DBNAME:ORCL}
+    pdb-name: ${ORACLE_PDB:ORCLPDB1}
+    schema: ${ORACLE_SCHEMA:TUCC}
+  offset:
+    storage-file: ${DEBEZIUM_OFFSET_FILE:/tmp/debezium-offsets.dat}
+    flush-interval-ms: 60000
+  schema-history-file: ${DEBEZIUM_HISTORY_FILE:/tmp/debezium-schema-history.dat}
