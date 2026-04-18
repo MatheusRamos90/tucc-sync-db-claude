@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TUCC - Sistema Legado</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body { padding-top: 60px; background-color: #f5f5f5; }
         .navbar-brand { font-weight: bold; letter-spacing: 1px; }
@@ -29,31 +31,31 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/produto/listar.action">
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/produto/lista.jsp">
                 TUCC
                 <span class="label label-warning label-legado">LEGADO</span>
             </a>
         </div>
         <div id="navbar-menu" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="${pageContext.request.requestURI.contains('/produto') and not pageContext.request.requestURI.contains('produto_empresa') and not pageContext.request.requestURI.contains('produto-empresa') ? 'active' : ''}">
-                    <a href="${pageContext.request.contextPath}/produto/listar.action">
+                <li class="${pageContext.request.requestURI.contains('/produto') and not pageContext.request.requestURI.contains('produto_empresa') ? 'active' : ''}">
+                    <a href="${pageContext.request.contextPath}/produto/lista.jsp">
                         <span class="glyphicon glyphicon-tag"></span> Produtos
                     </a>
                 </li>
                 <li class="${pageContext.request.requestURI.contains('/empresa') and not pageContext.request.requestURI.contains('produto') ? 'active' : ''}">
-                    <a href="${pageContext.request.contextPath}/empresa/listar.action">
+                    <a href="${pageContext.request.contextPath}/empresa/lista.jsp">
                         <span class="glyphicon glyphicon-briefcase"></span> Empresas
                     </a>
                 </li>
-                <li class="${pageContext.request.requestURI.contains('produto-empresa') or pageContext.request.requestURI.contains('produto_empresa') ? 'active' : ''}">
-                    <a href="${pageContext.request.contextPath}/produto-empresa/listar.action">
+                <li class="${pageContext.request.requestURI.contains('produto_empresa') ? 'active' : ''}">
+                    <a href="${pageContext.request.contextPath}/produto_empresa/lista.jsp">
                         <span class="glyphicon glyphicon-link"></span> Produto-Empresa
                     </a>
                 </li>
             </ul>
             <p class="navbar-text navbar-right" style="font-size:11px; color:#aaa;">
-                Java 8 &bull; Struts 2 &bull; Oracle
+                Java 8 &bull; Servlet &bull; Oracle
             </p>
         </div>
     </div>
@@ -61,14 +63,4 @@
 
 <div class="container">
 
-    <%-- Flash message (sucesso ou erro) --%>
-    <c:if test="${not empty sessionScope.flashMessage}">
-        <div class="alert alert-${sessionScope.flashType} alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <c:out value="${sessionScope.flashMessage}"/>
-        </div>
-        <c:remove var="flashMessage" scope="session"/>
-        <c:remove var="flashType"    scope="session"/>
-    </c:if>
+    <div id="alerts"></div>
